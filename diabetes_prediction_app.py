@@ -15,13 +15,14 @@ def yes_no_to_binary(label):
 
 # Collect inputs
 gender = st.selectbox("Gender", ["Female", "Male", "Other"])
-age = st.slider("Age", 1, 120, 30)
+age = st.number_input("Age", min_value=1, max_value=120, value=30, step=1)
 hypertension = yes_no_to_binary("Hypertension?")
 heart_disease = yes_no_to_binary("Heart Disease?")
 smoking = st.selectbox("Smoking History", ['never', 'former', 'current', 'not current', 'ever', 'No Info'])
-bmi = st.slider("BMI", 10.0, 60.0, 25.0)
-hba1c = st.slider("HbA1c Level", 3.0, 15.0, 5.5)
-glucose = st.slider("Blood Glucose Level", 50.0, 400.0, 100.0)
+bmi = st.number_input("BMI", min_value=10.0, max_value=60.0, value=25.0, step=0.1)
+hba1c = st.number_input("HbA1c Level", min_value=3.0, max_value=15.0, value=5.5, step=0.1)
+glucose = st.number_input("Blood Glucose Level", min_value=50.0, max_value=400.0, value=100.0, step=1.0)
+
 
 # Encode inputs
 gender_map = {"Female": 0, "Male": 1, "Other": 2}
